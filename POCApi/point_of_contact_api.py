@@ -35,8 +35,8 @@ conn_str = (
 # Email Configuration
 EMAIL_SERVER = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_USERNAME = 'your_mail_id'
-EMAIL_PASSWORD = 'Google API password'
+EMAIL_USERNAME = 'kratikrathi@gmail.com'
+EMAIL_PASSWORD = 'dqpb zfau veil ntst'
 
 
 def get_db_connection():
