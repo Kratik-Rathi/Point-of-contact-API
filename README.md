@@ -5,8 +5,10 @@
 •	Query Inputs: Product Name or Repository Name along with sql query 
                          (eg: EXECUTE FindPOC @ProductName = 'securityscanapi' )
 		         (eg: EXECUTE FindPOC @RepositoryName = 'securityrepo' )
+	   
 •	**Response:**
 o	Returns First Name, Last Name, Email ID, Chat User Name, Region, City, Title.
+
 •	**Error Handling:**
 o	Checks on each point of API (e.g. database connection, email sent or not, SQL procedure executed or not, dataframe created or not)
         **Workflow Overview**
