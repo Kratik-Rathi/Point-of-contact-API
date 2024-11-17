@@ -1,15 +1,5 @@
  Point of Contact API - Detailed Workflow
  ![image](https://github.com/user-attachments/assets/cf22cb2a-85fb-4ef9-8182-d1796af52e8b)
-**Introduction**
-The Point of Contact (PoC) API is designed to streamline internal collaboration at SC 1701-D by providing quick access to relevant contact information. In an expanding organization, efficiently identifying individuals involved in specific products or repositories becomes crucial. This API offers a solution by querying employee data to return pertinent contact details, facilitating smoother communication across distributed teams.
-**Use Case**
-Consider Veena, an employee at SC 1701-D, tasked with collaborating on the SecurityScanAPI project. Since the involved team operates remotely, Veena requires assistance in locating the correct contact. The PoC API allows her to perform a query using the product name (SecurityScanAPI) or repository name (SecurityRepo), yielding detailed contact information that enhances productivity and team integration.
-**Data Management & Preprocessing:**
-The API leverages a dataset generated via Mockaroo and includes fields such as EmpID, FirstName, LastName, ADEmail, LocationCode, Title, ChatUserName, etc. Preprocessing steps include:
-•	**Title Optimization:** Standardized to 20 distinct roles (e.g., Software Engineer, DevOps Engineer).
-•	**Product and Repository Assignment:** Random allocation of employees to one of 20 products (e.g., SecurityScanAPI) and repositories (e.g., SecurityRepo).
-•	**Consistent Column Naming:** Standardization (e.g., ADEmail → EmailID).
-•	**Filtered Subsets:** Tailored subsets for efficient query handling.
 **API Design and Core Features**
 •	Query Inputs: Product Name or Repository Name along with sql query 
                          (eg: EXECUTE FindPOC @ProductName = 'securityscanapi' )
