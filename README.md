@@ -1,8 +1,6 @@
-Point of Contact API - Detailed Workflow
+ Point of Contact API - Detailed Workflow
 
  ![image](https://github.com/user-attachments/assets/cf22cb2a-85fb-4ef9-8182-d1796af52e8b)
-
-
 
 Introduction
 The Point of Contact (PoC) API is designed to streamline internal collaboration at SC 1701-D by providing quick access to relevant contact information. In an expanding organization, efficiently identifying individuals involved in specific products or repositories becomes crucial. This API offers a solution by querying employee data to return pertinent contact details, facilitating smoother communication across distributed teams.
@@ -50,6 +48,7 @@ o	Formats retrieved data into an Excel file.
 o	Sends an email with the file attached to relevant team members.
 3.	Output:
 o	Provides a JSON response whether API run is successful or there was an error.
+
 Future Enhancements
 •	Performance: On a larger database “Temporary Tables” can be used to query through procedure.
 •	Analytics: Monitor API usage using Prometheus library when API is hosted on a company server, to monitor it’s data usage and how much load it is making on the server.
