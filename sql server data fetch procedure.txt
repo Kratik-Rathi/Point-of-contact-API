@@ -1,0 +1,30 @@
+USE [LuddyHack]
+GO
+/****** Object:  StoredProcedure [dbo].[FindPOC]    Script Date: 17-11-2024 14:06:02 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROCEDURE [dbo].[FindPOC]
+    @ProductName NVARCHAR(255) = NULL, -- Input parameter for ProductName
+    @RepositoryName NVARCHAR(255) = NULL -- Input parameter for RepositoryName
+AS 
+BEGIN
+    -- Using NOLOCK hints for performance, ensure correctness is acceptable
+    SELECT 
+        emp.EmpId, 
+        emp.FirstName, 
+        emp.LastName, 
+        emp.Title, 
+        emp.EmailID AS 'Email ID', 
+        emp.ChatUserName AS 'Chat User Name', 
+        loc.Region, 
+        loc.City
+    FROM EmpDetails emp WITH (NOLOCK)
+    LEFT JOIN Product_Repo_Details prd WITH (NOLOCK) ON emp.EmpID = prd.EmpID
+    LEFT JOIN LocationDetails loc WITH (NOLOCK) ON emp.LocationCode = loc.LocationCode
+    WHERE 
+        (@ProductName IS NULL OR prd.ProductName = @ProductName)  -- Filter by ProductName if provided
+        AND (@RepositoryName IS NULL OR prd.RepositoryName = @RepositoryName) -- Filter by RepositoryName if provided
+    ORDER BY emp.FirstName;
+END;
