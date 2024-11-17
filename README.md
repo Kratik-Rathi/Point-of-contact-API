@@ -35,5 +35,7 @@ o	Sends an email with the file attached to relevant team members.
 o	Provides a JSON response whether API run is successful or there was an error.
 
 **Future Enhancements**
+
 •	Performance: On a larger database “Temporary Tables” can be used to query through procedure.
+
 •	Analytics: Monitor API usage using Prometheus library when API is hosted on a company server, to monitor it’s data usage and how much load it is making on the server.
