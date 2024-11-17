@@ -1,0 +1,17 @@
+version: "3"
+services:
+  digi_mark_6:
+    build: ./POCApi
+    container_name: "POCApi"
+    command: python3 -m flask --app point_of_contact_api run --host=0.0.0.0 --port=5000
+    volumes:
+      - ./POCApi/:/app
+    ports:
+      - "0.0.0.0:5000:5000/tcp"
+
+    restart: always
+  cron:
+    build: ./Cron
+    container_name: "cron_vision"
+    network_mode: "host"
+    restart: always
