@@ -35,8 +35,8 @@ conn_str = (
 # Email Configuration
 EMAIL_SERVER = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_USERNAME = 'kratikrathi@gmail.com'
-EMAIL_PASSWORD = 'dqpb zfau veil ntst'
+EMAIL_USERNAME = 'mail id'
+EMAIL_PASSWORD = 'api password'
 
 
 def get_db_connection():
@@ -148,8 +148,8 @@ def point_of_contact_route():
         # Emailing with the attachment
         mail_subject = f"Point of Contacts {datetime.now().strftime('%Y-%m-%d')}"
         mail_body = "Please find attached the point of contacts for the project."
-        receiver_emails = ['msanika13@gmail.com']
-        cc_emails = ['niranjantap@gmail.com']
+        receiver_emails = ['receiver mail(s)']
+        cc_emails = ['cc mail (s)']
         send_mail("point_of_contact.xlsx", mail_subject, mail_body, receiver_emails, cc_emails,)
 
         return Response("Contact Generated and Email Sent Successfully!")
